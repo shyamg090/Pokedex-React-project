@@ -14,7 +14,7 @@ function PokemonList(props) {
       {/* {props.pokemon.map(poke =>  <PokemonCard key={poke} poke={poke} /> )} 
       this is not needed bcz pokedata has name and all details
       */}
-      {props.loading === true ? <><p><a href="https://giphy.com/gifs/pokemon-pikachu-after-effects-l0HlLMeBgzK2UuHVS"></a></p></> :
+      {props.loading === true ? <><h1>Loading.......</h1></> :
         props.pokedata.map(pokedata => {
           return <PokemonCard
             key={pokedata.name}

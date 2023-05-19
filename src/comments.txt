@@ -1,0 +1,50 @@
+ // const [pokemon, setPokemon] = useState([]);
+  //to get the pokemon initiallt its empty array
+
+  // async function pokeFun(){
+    // setPokemon(res.data.results.map(p => p.name));
+
+    
+    // console.log(pokedata)
+
+    // async function pokeImgFun(res){
+
+         // console.log(result.data);
+
+   //initially pokestate is empty      
+
+
+   // ---************************--
+
+{/* //note **put prevPageurl &&** to check not prevurl  */}
+
+
+
+// key is to be sent to Component hence send pokemon name as key bcz no pokemon name will repeat
+
+// function pokeFun2(res){
+//     // console.log(res)
+//     res.data.results.map(p=> {
+//       console.log(p.url)
+//       const result= axios.get(p.url)
+//       console.log(result) 
+//     })
+
+// }
+
+  // function pokeFun() {
+
+  //   axios.get(currPageurl).then(res => {
+  //     setNextpageurl(res.data.next);
+  //     setPrevpageurl(res.data.previous);
+  //     setPokemon(res.data.results.map(p => p.name));
+  //     return res;  
+  //   }).then(res=> pokeFun2(res))
+      
+
+  // }
+
+  
+          {/* <h1>{prevUrl}</h1> */}
+
+          //...pokestate acts like push function push the results.data to ...pokestate

@@ -5,8 +5,7 @@ import "./index.css";
 
 function App() {
 
-  // const [pokemon, setPokemon] = useState([]);
-  //to get the pokemon initiallt its empty array
+ 
   const [pokedata, setPokedata] = useState([]);
 
   const [currPageurl, setcurrPageurl] = useState("https://pokeapi.co/api/v2/pokemon");
@@ -15,27 +14,16 @@ function App() {
 
   const [loading, setLoading]= useState(true);
 
-async function pokeFun(){
-  // const pokeFun = async () => {
-    setLoading(true);
-    const res= await axios.get(currPageurl);
-    setNextpageurl(res.data.next);
-    setPrevpageurl(res.data.previous);
-    // setPokemon(res.data.results.map(p => p.name));
-    
-    pokeDataFun(res.data.results);
 
-    console.log(pokedata)
-    setLoading(false);
-}
-// async function pokeImgFun(res){
+
+
   const pokeDataFun= async(res)=>{
     res.map(async(res)=>{
     const result= await axios.get(res.url);
-    console.log(result.data);
+   
 
-    setPokedata(pokestate=>{ //initially pokestate is empty
-       pokestate=[...pokestate,result.data] //...pokestate acts like push function push the results.data to ...pokestate
+    setPokedata(pokestate=>{ 
+       pokestate=[...pokestate,result.data] 
       
       pokestate.sort((a,b)=> a.id>b.id? 1: -1);
 
@@ -45,8 +33,18 @@ async function pokeFun(){
   })
   }
 
-// ---************************--
-useEffect(() => {  pokeFun() }, [currPageurl]);
+
+useEffect(() =>  async() => {
+  setLoading(true);
+  const res= await axios.get(currPageurl);
+  setNextpageurl(res.data.next);
+  setPrevpageurl(res.data.previous);
+  
+  
+  pokeDataFun(res.data.results);
+
+  setLoading(false);
+}  , [currPageurl]);
 
 function prevUrl(){
   setPokedata([]);
@@ -63,19 +61,17 @@ function nextUrl(){
       <PokemonList
       key={pokedata.name}
       loading={loading}
-      // pokemon={pokemon}
       pokedata={pokedata}
       />
 
         <div className="btndiv">
-          {/* <h1>{prevUrl}</h1> */}
         {prevPageurl  && <button onClick={prevUrl} className="btn">previous</button> }
         {nextPageurl && <button onClick={nextUrl} className="btn">
             next
         </button>}
         </div>
 
-      {/* //note **put prevPageurl &&** to check not prevurl  */}
+      
     
     </>
 
@@ -83,27 +79,3 @@ function nextUrl(){
 
 }
 export default App;
-
-// key is to be sent to Component hence send pokemon name as key bcz no pokemon name will repeat
-
-// function pokeFun2(res){
-//     // console.log(res)
-//     res.data.results.map(p=> {
-//       console.log(p.url)
-//       const result= axios.get(p.url)
-//       console.log(result) 
-//     })
-
-// }
-
-  // function pokeFun() {
-
-  //   axios.get(currPageurl).then(res => {
-  //     setNextpageurl(res.data.next);
-  //     setPrevpageurl(res.data.previous);
-  //     setPokemon(res.data.results.map(p => p.name));
-  //     return res;  
-  //   }).then(res=> pokeFun2(res))
-      
-
-  // }
