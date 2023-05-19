@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@500&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Ysabeau', sans-serif;
+  background-color: #FBFFDC;
+}
+.navbar{
+  /* width: 40vw; */
+  display: flex;
+  align-items: center;
+  /* background-color: #98EECC; */
+  color: #0C134F;
+
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  padding: 1rem;
+}
+.navbar h1{
+  font-size: 2rem;
+
+}
+.pokeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #98EECC;
+  background-color: #FEFF86;
+  color: #0C134F;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+  font-size: 1rem;
+  margin: 1rem 1rem;
+  /* transform: 1s; */
+  box-shadow: 0px 7px 10px rgb(0, 0, 0);
+  width: 9.8rem;
+}
+
+.pokeCard img {
+  width: 9rem;
+  padding: 0;
+  margin: 1rem 0rem;
+  
+}
+
+.pokeCard img,h2,h1{
+  background-color: inherit;
+  color: inherit;
+}
+
+/* .div-whole-left,
+.div-whole-right {
+  flex-basis: 50%;
+} */
+
+.div-whole-left {
+  margin: 5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+  grid-gap: 1rem;
+  justify-items: center;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.btndiv{
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  margin: auto;
+  background-color: rgba(0, 255, 255, 0);
+  padding: 2rem;
+}
+.btn{
+  padding: 1rem;
+  margin: .5rem;
+  font-size: 1.5rem;
+  background-color: red;
+  color: white;
+  width: 8rem;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 1rem;
+}
+
+/* @media screen and (max-width:370px) {
+  .div-whole-left{
+    grid-template-columns: repeat(auto-fit, minmax(32rem,1fr));
+  }
+} */
