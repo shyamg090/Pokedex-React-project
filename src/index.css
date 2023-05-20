@@ -13,8 +13,8 @@
   /* background-color: #98EECC; */
   color: #0C134F;
 
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  z-index: -1;
   margin: auto;
   padding: 1rem;
 }
@@ -41,6 +41,7 @@
 
 .pokeCard img {
   width: 9rem;
+  height: 10rem;
   padding: 0;
   margin: 1rem 0rem;
   
@@ -92,3 +93,28 @@
     grid-template-columns: repeat(auto-fit, minmax(32rem,1fr));
   }
 } */
+
+.foot{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FEFF86;
+  padding: 2rem;
+  margin: 0;
+}
+.foot div img{
+  width: 2rem;
+  height: 2rem;
+  margin: 0 1rem;
+  padding: 0;
+  background-color: inherit;
+}
+.foot div{
+  background-color: inherit;
+  /* padding: 2rem; */
+}
+.alink{
+  text-decoration: none;
+  background-color: inherit;
+
+}

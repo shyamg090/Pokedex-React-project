@@ -14,12 +14,13 @@ function PokemonList(props) {
       {/* {props.pokemon.map(poke =>  <PokemonCard key={poke} poke={poke} /> )} 
       this is not needed bcz pokedata has name and all details
       */}
-      {props.loading === true ? <><h1>Loading.......</h1></> :
+      {console.log("this is "+props.loading)}
+      {props.loading  ? "Loading......." :
         props.pokedata.map(pokedata => {
           return <PokemonCard
             key={pokedata.name}
             pokeid={pokedata.id}
-            pokeimg={pokedata.sprites.front_default}
+            pokeimg={pokedata.sprites.other.dream_world.front_default}
             pokename={pokedata.name}
           />
         }
