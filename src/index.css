@@ -13,8 +13,8 @@
   /* background-color: #98EECC; */
   color: #0C134F;
 
-  position: absolute;
-  z-index: -1;
+  position: relative;
+  /* z-index: -1; */
   margin: auto;
   padding: 1rem;
 }
