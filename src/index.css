@@ -44,7 +44,11 @@
   height: 10rem;
   padding: 0;
   margin: 1rem 0rem;
-  
+  animation: mover infinite 2s alternate;
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
 }
 
 .pokeCard img,h2,h1{
@@ -88,11 +92,7 @@
   border-radius: 1rem;
 }
 
-/* @media screen and (max-width:370px) {
-  .div-whole-left{
-    grid-template-columns: repeat(auto-fit, minmax(32rem,1fr));
-  }
-} */
+
 
 .foot{
   display: flex;
@@ -117,4 +117,18 @@
   text-decoration: none;
   background-color: inherit;
 
+}
+@media screen and (max-width:600px) {
+  .btn{
+    padding: .5rem;
+    margin: .5rem;
+    font-size: 1rem;
+    background-color: red;
+    color: white;
+    width: 4.7rem;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    border-radius: .5rem;
+  }
 }
