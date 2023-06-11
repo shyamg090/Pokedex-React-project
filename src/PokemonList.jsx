@@ -7,15 +7,13 @@ function PokemonList(props) {
 
   return (
   <>
-    <div className="navbar"> 
-      <h1>Pokedex</h1>
-    </div>
+
     <div className="div-whole-left">
       {/* {props.pokemon.map(poke =>  <PokemonCard key={poke} poke={poke} /> )} 
       this is not needed bcz pokedata has name and all details
       */}
       {console.log("this is "+props.loading)}
-      {props.loading  ? "Loading......." :
+      {props.loading  ? <div className="loading"><h1>Loading.......</h1></div> :
         props.pokedata.map(pokedata => {
           return <PokemonCard
             key={pokedata.name}
