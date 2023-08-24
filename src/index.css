@@ -1,62 +1,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@500&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: 'Ysabeau', sans-serif;
   background-color: #22A699;
-  cursor: pointer;
 }
-.navbar{
+
+.navbar {
   display: flex;
   align-items: center;
   background-color: #F29727;
   color: #060047;
-
-  position: sticky;
-  z-index: 100;
-  /* margin: auto; */
   padding: 1rem;
 }
-.navbar h1{
+
+.navbar h1 {
   font-size: 2rem;
 
 }
+
 .pokeCard {
+  width: 14rem;
+  position: relative;
+  background-color: #F29727;
+  color: #060047;
+  border-radius: 1rem;
+  box-shadow: 0px 7px 10px rgb(0, 0, 0);
+  /* ----------------------------vvimp----------------------------------- */
+  overflow: hidden;
+  /* ----------------------------vvimp----------------------------------- */
+  cursor: pointer;
+}
+
+/* .pokeCard:hover{
+  .fullCard{
+    transform: none;
+  }
+} */
+
+.mainCard {
+  position: relative;
+  background-color: #05050500;
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #98EECC; */
-  background-color: #F29727;
-  /* background-color: #FEFF86; */
-  color: #060047;
   padding: 1rem;
   text-align: center;
-  border-radius: 1rem;
   font-size: 1rem;
   margin: 1rem 1rem;
   /* transform: 1s; */
-  box-shadow: 0px 7px 10px rgb(0, 0, 0);
-  width: 9.8rem;
+  background-color: inherit;
 }
 
-.pokeCard img {
+
+.mainCard>img {
   width: 9rem;
   height: 10rem;
   padding: 0;
   margin: 1rem 0rem;
   animation: mover linear infinite 1.3s alternate;
 }
+
 @keyframes mover {
-  to{ 
-    transform: translateY(-10px); 
+  to {
+    transform: translateY(-10px);
   }
 }
 
-.pokeCard img,h2,h1{
-  background-color: inherit;
+.mainCard>img,
+h2,
+h1 {
+  background-color: rgba(205, 92, 92, 0);
   color: inherit;
 }
+
+.fullCard {
+  width: inherit;
+  height: 100%;
+  position: absolute;
+  transform: translateY(-100vh);
+  transition: 1s;
+
+  color: #ff8c00;
+  background-color: #000000d0;
+  /* backdrop-filter: blur(1px); */
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  padding: .2rem;
+}
+
+
+.card-toggle {
+  transform: none;
+}
+
+.types {
+  display: flex;
+  width: inherit;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  margin: .5rem 0 0 0;
+}
+
+.h-w {
+  font-size: .8rem;
+  display: flex;
+  width: inherit;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  margin: .5rem 0 0 0;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  margin: .5rem 0 0 0;
+  padding: 1rem;
+}
+
+
+
+
 
 /* .div-whole-left,
 .div-whole-right {
@@ -66,14 +146,14 @@
 .div-whole-left {
   margin: 5rem 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 1rem;
   justify-items: center;
   padding: 0;
   margin: 2rem 0;
 }
 
-.btndiv{
+.btndiv {
   display: flex;
   justify-content: space-between;
   width: fit-content;
@@ -81,7 +161,8 @@
   background-color: rgba(0, 255, 255, 0);
   padding: 2rem;
 }
-.btn{
+
+.btn {
   padding: 1rem;
   margin: .5rem;
   font-size: 1.5rem;
@@ -96,7 +177,7 @@
 
 
 
-.foot{
+.foot {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,25 +185,29 @@
   padding: 2rem;
   margin: 0;
 }
-.foot div img{
+
+.foot div img {
   width: 2rem;
   height: 2rem;
   margin: 0 1rem;
   padding: 0;
   background-color: inherit;
 }
-.foot div{
+
+.foot div {
   background-color: inherit;
   bottom: 0%;
   /* padding: 2rem; */
 }
-.alink{
+
+.alink {
   text-decoration: none;
   background-color: inherit;
 
 }
+
 @media screen and (max-width:600px) {
-  .btn{
+  .btn {
     padding: .5rem;
     margin: .5rem;
     font-size: 1rem;
@@ -135,7 +220,31 @@
     border-radius: .5rem;
   }
 }
-.loading{
+
+.loading {
   height: 80vh;
   text-align: center;
+}
+
+.showCardInfo {
+  position: absolute;
+  width: 100vw;
+  background-color: #22A699;
+  z-index: 100;
+}
+
+/* @media (hover: hover) {
+  .pokeCard:hover {
+      .fullCard {
+        transform: none;
+      }
+    }
+} */
+
+@media screen and (min-width:1024px) {
+  .pokeCard:hover {
+      .fullCard {
+        transform: none;
+      }
+    }
 }

@@ -13,7 +13,6 @@ function PokeCardInfo() {
                 fire
             </div>
         </div>
-        .
         </>
      );
 }

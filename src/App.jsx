@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import PokemonList from "./PokemonList";
 import axios from "axios";
 import "./index.css";
-import Footer from "./Footer";
 
 function App() {
   const [pokedata, setPokedata] = useState([]);
@@ -23,7 +22,8 @@ function App() {
     const res = await axios.get(currPageurl);
     setNextpageurl(res.data.next);
     setPrevpageurl(res.data.previous);
-    pokeDataFun(res.data.results);
+    const [...pokeresults] = res.data.results;
+    pokeDataFun(pokeresults);
     setLoading(false);
   };
 
@@ -48,13 +48,11 @@ function App() {
     setPokedata([]);
     setcurrPageurl(nextPageurl);
   }
-  return (
-    <>
-      <nav className="navbar">
-        <h1>Pokedex</h1>
-      </nav>
 
-      {console.log(pokedata)}
+  return (
+    <div>
+
+      {/* {console.log(pokedata)} */}
       <PokemonList key={pokedata.name} pokedata={pokedata} loading={loading} />
 
       <div className="btndiv">
@@ -70,8 +68,7 @@ function App() {
         )}
       </div>
 
-      <Footer />
-    </>
+    </div>
   );
 }
 export default App;

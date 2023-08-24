@@ -2,24 +2,29 @@ import React from "react";
 import PokemonCard from "./PokemonCard";
 
 
+function PokemonList({ pokedata, loading }) {
 
-function PokemonList(props) {
 
   return (
   <>
+      {console.log(pokedata)}
 
     <div className="div-whole-left">
       {/* {props.pokemon.map(poke =>  <PokemonCard key={poke} poke={poke} /> )} 
       this is not needed bcz pokedata has name and all details
       */}
-      {console.log("this is "+props.loading)}
-      {props.loading  ? <div className="loading"><h1>Loading.......</h1></div> :
-        props.pokedata.map(pokedata => {
+      {console.log("this is "+loading)}
+      {loading  ? <div className="loading"><h1>Loading.......</h1></div> :
+        pokedata.map(pokedata => {
           return <PokemonCard
             key={pokedata.name}
             pokeid={pokedata.id}
             pokeimg={pokedata.sprites.other.dream_world.front_default}
             pokename={pokedata.name}
+            pokeheight={pokedata.height}
+            pokeweight={pokedata.weight}
+            poketype={pokedata.types.slice(0,)}
+            pokestats={pokedata.stats}
           />
         }
         )}
