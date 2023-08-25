@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div>
-
+      
       {/* {console.log(pokedata)} */}
       <PokemonList key={pokedata.name} pokedata={pokedata} loading={loading} />
 

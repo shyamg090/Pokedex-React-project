@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
     return (
-        <footer className="foot">
+        <footer id="foot">
             <div>
                 <a class="alink"
                     href="https://www.linkedin.com/in/shyam-g-6712a522b">

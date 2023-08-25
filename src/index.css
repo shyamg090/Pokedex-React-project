@@ -5,23 +5,51 @@
   padding: 0;
   font-family: 'Ysabeau', sans-serif;
   background-color: #22A699;
+  scroll-behavior: smooth;
 }
 
-.navbar {
+#navbar {
+  position: sticky;  
+  z-index: 10;
+  top: 0;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #F29727;
   color: #060047;
   padding: 1rem;
 }
 
-.navbar h1 {
-  font-size: 2rem;
 
+#navbar h1 {
+  font-size: 2rem;
+}
+
+#top{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#navbar .navig a{
+  background-color: inherit;
+}
+.navig{
+  padding: .5rem;
+  background-color: inherit;
+}
+#navbar .navig a svg{
+  margin: 0 .5rem;
+  padding: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #060047;  
+  background-color: #00000000;
 }
 
 .pokeCard {
-  width: 14rem;
+  width: 16rem;
   position: relative;
   background-color: #F29727;
   color: #060047;
@@ -56,8 +84,8 @@
 
 
 .mainCard>img {
-  width: 9rem;
-  height: 10rem;
+  width: 13rem;
+  height: 13rem;
   padding: 0;
   margin: 1rem 0rem;
   animation: mover linear infinite 1.3s alternate;
@@ -85,7 +113,7 @@ h1 {
 
   color: #ff8c00;
   background-color: #000000d0;
-  /* backdrop-filter: blur(1px); */
+  backdrop-filter: blur(3px);
 
   top: 0;
   left: 0;
@@ -95,7 +123,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: .9rem;
+  font-size: 1rem;
   padding: .2rem;
 }
 
@@ -177,7 +205,7 @@ h1 {
 
 
 
-.foot {
+#foot {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,7 +214,7 @@ h1 {
   margin: 0;
 }
 
-.foot div img {
+#foot div img {
   width: 2rem;
   height: 2rem;
   margin: 0 1rem;
@@ -194,7 +222,7 @@ h1 {
   background-color: inherit;
 }
 
-.foot div {
+#foot div {
   background-color: inherit;
   bottom: 0%;
   /* padding: 2rem; */
