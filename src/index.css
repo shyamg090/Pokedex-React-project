@@ -184,23 +184,20 @@ h1 {
 .btndiv {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: fit-content;
   margin: auto;
   background-color: rgba(0, 255, 255, 0);
   padding: 2rem;
 }
+.btn{
+  border: none;
+}
 
-.btn {
-  padding: 1rem;
-  margin: .5rem;
-  font-size: 1.5rem;
-  background-color: red;
-  color: white;
-  width: 8rem;
-  align-items: center;
-  justify-content: center;
-  border: 3px solid black;
-  border-radius: 1rem;
+.btn svg {
+  font-size: 3.5rem;
+  background-color: inherit;
+  margin: 0 1rem;
 }
 
 
@@ -234,21 +231,6 @@ h1 {
 
 }
 
-@media screen and (max-width:600px) {
-  .btn {
-    padding: .5rem;
-    margin: .5rem;
-    font-size: 1rem;
-    background-color: red;
-    color: white;
-    width: 4.7rem;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid black;
-    border-radius: .5rem;
-  }
-}
-
 .loading {
   height: 80vh;
   text-align: center;
@@ -261,13 +243,6 @@ h1 {
   z-index: 100;
 }
 
-/* @media (hover: hover) {
-  .pokeCard:hover {
-      .fullCard {
-        transform: none;
-      }
-    }
-} */
 
 @media screen and (min-width:1024px) {
   .pokeCard:hover {

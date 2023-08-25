@@ -2,6 +2,10 @@ import React, { useEffect, useState} from "react";
 import PokemonList from "./PokemonList";
 import axios from "axios";
 import "./index.css";
+import { BiSolidChevronsRight } from 'react-icons/bi'
+import { BiSolidChevronsLeft } from 'react-icons/bi'
+import { BsThreeDots } from 'react-icons/bs'
+
 
 function App() {
   const [pokedata, setPokedata] = useState([]);
@@ -56,16 +60,21 @@ function App() {
       <PokemonList key={pokedata.name} pokedata={pokedata} loading={loading} />
 
       <div className="btndiv">
+
         {prevPageurl && (
           <button onClick={prevUrl} className="btn">
-            Previous
+            <BiSolidChevronsLeft />
           </button>
         )}
+
+        <BsThreeDots />
+
         {nextPageurl && (
           <button onClick={nextUrl} className="btn">
-            Next
+            <BiSolidChevronsRight />
           </button>
         )}
+        
       </div>
 
     </div>
