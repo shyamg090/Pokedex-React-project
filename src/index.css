@@ -113,7 +113,7 @@ h1 {
 
   color: #ff8c00;
   background-color: #000000d0;
-  backdrop-filter: blur(3px);
+  /* backdrop-filter: blur(3px); */
 
   top: 0;
   left: 0;
